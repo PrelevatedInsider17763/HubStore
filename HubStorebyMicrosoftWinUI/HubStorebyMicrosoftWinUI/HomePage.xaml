@@ -1,0 +1,24 @@
+﻿<Page
+    x:Class="HubStorebyMicrosoftWinUI.HomePage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:HubStorebyMicrosoftWinUI"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:controls="using:SettingsUI.Controls"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <controls:SettingsPageControl ModuleTitle="Hub Store" ModuleDescription="The advanced store for your apps, games and more.">
+        <controls:SettingsPageControl.ModuleContent>
+            <StackPanel Orientation="Vertical">
+                <controls:SettingsGroup Header="Main pages" Margin="0,-32,0,0">
+                    <controls:Setting Icon="&#xE71D;" Header="Apps" Description="Apps, tweaking tools, Android APK installers and more"/>
+                    <controls:Setting Icon="&#xE714;" Header="Games" Description="Games, RTX games and more"/>
+                    <controls:Setting Icon="&#xE8D6;" Header="Music" Description="Listen to music"/>
+                </controls:SettingsGroup>
+                <controls:SettingsGroup Header="Other" Margin="0,-32,0,0">
+                    <controls:Setting Icon="&#xE8D5;" Header="File managers" Description="Manage apps"/>
+                </controls:SettingsGroup>
+            </StackPanel>
+        </controls:SettingsPageControl.ModuleContent>
+    </controls:SettingsPageControl>
+</Page>

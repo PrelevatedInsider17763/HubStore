@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<Package
+  xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
+  xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
+  xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"
+  IgnorableNamespaces="uap rescap">
+
+  <Identity
+    Name="f53c6d5f-c188-43f5-8b4c-ae36111b3bc4"
+    Publisher="CN=Sreeram"
+    Version="10.0.22000.0" />
+
+  <Properties>
+    <DisplayName>Hub Store</DisplayName>
+    <PublisherDisplayName>Microsoft</PublisherDisplayName>
+    <Logo>Images\StoreLogo.png</Logo>
+  </Properties>
+
+  <Dependencies>
+    <TargetDeviceFamily Name="Windows.Universal" MinVersion="10.0.17763.0" MaxVersionTested="10.0.19041.0" />
+    <TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.17763.0" MaxVersionTested="10.0.19041.0" />
+  </Dependencies>
+
+  <Resources>
+    <Resource Language="x-generate"/>
+  </Resources>
+
+  <Applications>
+    <Application Id="App"
+      Executable="$targetnametoken$.exe"
+      EntryPoint="HubStoreApp">
+      <uap:VisualElements
+        DisplayName="Hub Store"
+        Description="Hub Store"
+        BackgroundColor="transparent"
+        Square150x150Logo="Images\Square150x150Logo.png"
+        Square44x44Logo="Images\Square44x44Logo.png">
+        <uap:DefaultTile Wide310x150Logo="Images\Wide310x150Logo.png"  Square71x71Logo="Images\Square71x71Logo.png">
+          <uap:ShowNameOnTiles>
+            <uap:ShowOn Tile="square150x150Logo"/>
+            <uap:ShowOn Tile="wide310x150Logo"/>
+          </uap:ShowNameOnTiles>
+        </uap:DefaultTile >
+        <uap:SplashScreen Image="Images\SplashScreen.png"  BackgroundColor="transparent"/>
+        <uap:InitialRotationPreference>
+          <uap:Rotation Preference="landscape"/>
+          <uap:Rotation Preference="portrait"/>
+          <uap:Rotation Preference="landscapeFlipped"/>
+          <uap:Rotation Preference="portraitFlipped"/></uap:InitialRotationPreference>
+      </uap:VisualElements>
+      <Extensions>
+        <uap:Extension Category="windows.protocol" Executable="HubStorebyMicrosoftWinUI.exe" EntryPoint="HubStoreApp">
+          <uap:Protocol Name="ms-hubstore">
+            <uap:Logo>S.png</uap:Logo>
+            <uap:DisplayName>Hub Store</uap:DisplayName>
+          </uap:Protocol>
+        </uap:Extension>
+      </Extensions>
+    </Application>
+  </Applications>
+
+  <Capabilities>
+    <rescap:Capability Name="runFullTrust" />
+  </Capabilities>
+</Package>
