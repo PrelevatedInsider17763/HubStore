@@ -9,9 +9,17 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
     <controls:SettingsPageControl ModuleTitle="Settings">
         <controls:SettingsPageControl.ModuleContent>
-            <StackPanel Spacing="10" Margin="10,10,10,10" Orientation="Vertical" VerticalAlignment="Bottom" Grid.Row="0">
-                <TextBlock Text="&#xA9; Microsoft Corporation. All rights reserved." Style="{StaticResource CopyrightTextStyle}" TextWrapping="Wrap"/>
-            </StackPanel>
+            <Grid>
+                <controls:SettingsGroup Header="Miscellaneous">
+                    <controls:SettingExpander Header="Source">
+                        <ToggleButton></ToggleButton>
+                    </controls:SettingExpander>
+                </controls:SettingsGroup>
+
+                <StackPanel Spacing="10" Margin="10,10,10,10" Orientation="Vertical" VerticalAlignment="Bottom" Grid.Row="0">
+                    <TextBlock Text="&#xA9; Microsoft Corporation. All rights reserved." Style="{StaticResource CopyrightTextStyle}" TextWrapping="Wrap"/>
+                </StackPanel>
+            </Grid>
         </controls:SettingsPageControl.ModuleContent>
     </controls:SettingsPageControl>
 </Page>

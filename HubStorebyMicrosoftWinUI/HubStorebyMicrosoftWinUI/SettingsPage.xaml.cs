@@ -27,23 +27,5 @@ namespace HubStorebyMicrosoftWinUI
         {
             this.InitializeComponent();
         }
-
-        protected override void OnNavigatedTo(NavigationEventArgs e)
-        {
-            themePanel.Children.Cast<RadioButton>().First(c => (ElementTheme)c.Tag == SampleConfig.CurrentTheme).IsChecked = true;
-            base.OnNavigatedTo(e);
-        }
-
-        private void OnThemeRadioButtonChecked(object sender, RoutedEventArgs e)
-        {
-            ElementTheme selectedTheme = (ElementTheme)((RadioButton)sender).Tag;
-
-            Grid content = MainPage.Current.Content as Grid;
-            if (content is not null)
-            {
-                content.RequestedTheme = selectedTheme;
-                SampleConfig.CurrentTheme = content.RequestedTheme;
-            }
-        }
     }
 }
